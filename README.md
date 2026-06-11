@@ -4,7 +4,7 @@
 
 ### Dollar-denominated waste forensics for GitHub Actions.
 
-Not "what does CI cost" — **which specific waste, in dollars, and the one-line
+Not "what does CI cost." **Which specific waste, in dollars, and the one-line
 YAML change that stops it.** Local, read-only, uses the `gh` auth you already
 have. Nothing leaves your machine.
 
@@ -22,8 +22,8 @@ have. Nothing leaves your machine.
 Every CI cost dashboard answers "where do the minutes go?" None of them answer
 the question your team actually has: **which minutes were waste, what caused it,
 and what's the fix?** wastegate replays your repo's Actions run history through
-counterfactual analyses — *what would a `concurrency` block have cancelled? what
-did failed runs burn? what did re-runs of flaky jobs cost?* — and prints a ledger
+counterfactual analyses (*what would a `concurrency` block have cancelled? what
+did failed runs burn? what did re-runs of flaky jobs cost?*) and prints a ledger
 where every line item is a cause, a dollar figure **with its arithmetic shown**,
 and a copy-pasteable fix.
 
@@ -95,12 +95,12 @@ wastegate --rate-ubuntu 0            # self-hosted runners? price them at $0
 
 | Cause | What it computes |
 | --- | --- |
-| **Superseded runs** | Runs that kept burning minutes after a newer push made them irrelevant — i.e., exactly what `concurrency.cancel-in-progress` would have cancelled, computed *counterfactually from your real run timestamps*. Static linters can tell you the block is missing; wastegate tells you what its absence **cost last month**. |
-| **Failed-run spend** | Every minute of a failed run produced nothing. Ranked by cost, surfacing the runs that died late after long builds — the classic "e2e fails in minute 22 because lint would have failed in minute 1" pattern. |
-| **Re-run (flake) spend** | Runs with `attempt > 1` — someone clicked re-run because something flaked. Earlier attempts are charged as waste, conservatively. |
+| **Superseded runs** | Runs that kept burning minutes after a newer push made them irrelevant, i.e., exactly what `concurrency.cancel-in-progress` would have cancelled, computed *counterfactually from your real run timestamps*. Static linters can tell you the block is missing; wastegate tells you what its absence **cost last month**. |
+| **Failed-run spend** | Every minute of a failed run produced nothing. Ranked by cost, surfacing the runs that died late after long builds: the classic "e2e fails in minute 22 because lint would have failed in minute 1" pattern. |
+| **Re-run (flake) spend** | Runs with `attempt > 1`: someone clicked re-run because something flaked. Earlier attempts are charged as waste, conservatively. |
 
 Costs are computed from **per-job wall-clock durations × GitHub's per-minute
-runner rates, rounded up per job exactly as GitHub bills** — which also means it
+runner rates, rounded up per job exactly as GitHub bills**, which also means it
 works on public repos (where GitHub's own `billable` field is always $0) and
 answers "what *would* this cost on metered minutes."
 
@@ -119,15 +119,15 @@ and nothing else).
   a concurrency block"); wastegate **measures** ("its absence cost $412 in the
   last 30 days, here are the runs").
 
-The counterfactual analyses — superseded-run cost, and the planned
-matrix-redundancy and draft-PR analyses — exist in no other tool, hosted or
+The counterfactual analyses (superseded-run cost, and the planned
+matrix-redundancy and draft-PR analyses) exist in no other tool, hosted or
 local, as of mid-2026.
 
 ## Roadmap
 
 Matrix entries that never caught a unique failure · draft-PR run waste ·
 org-wide rollup · `gh extension install`. The analyses are pure functions over
-run records — see [CONTRIBUTING.md](CONTRIBUTING.md) if you want to add one.
+run records. See [CONTRIBUTING.md](CONTRIBUTING.md) if you want to add one.
 
 ## License
 
