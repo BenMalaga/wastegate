@@ -8,7 +8,8 @@ Not "what does CI cost" — **which specific waste, in dollars, and the one-line
 YAML change that stops it.** Local, read-only, uses the `gh` auth you already
 have. Nothing leaves your machine.
 
-[![release](https://img.shields.io/github/v/release/BenMalaga/wastegate?color=blue&label=release)](https://github.com/BenMalaga/wastegate/releases)
+[![npm](https://img.shields.io/npm/v/wastegate?color=cb3837&label=npm)](https://www.npmjs.com/package/wastegate)
+[![CI](https://github.com/BenMalaga/wastegate/actions/workflows/test.yml/badge.svg)](https://github.com/BenMalaga/wastegate/actions)
 ![node](https://img.shields.io/badge/node-%E2%89%A518-339933)
 ![deps](https://img.shields.io/badge/dependencies-0-success)
 ![mode](https://img.shields.io/badge/mode-read--only-blue)
