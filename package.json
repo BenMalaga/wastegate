@@ -1,0 +1,42 @@
+{
+  "name": "wastegate",
+  "version": "0.1.0",
+  "description": "Dollar-denominated waste forensics for GitHub Actions. Audits your run history and prints which specific waste is costing you — with the exact YAML fix. Local, read-only, uses your gh auth.",
+  "type": "module",
+  "bin": {
+    "wastegate": "bin/wastegate.js"
+  },
+  "files": [
+    "bin",
+    "src"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "github-actions",
+    "ci",
+    "cost",
+    "ci-cost",
+    "gh",
+    "gh-extension",
+    "devops",
+    "cost-optimization",
+    "actions",
+    "waste",
+    "finops"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenMalaga/wastegate.git"
+  },
+  "homepage": "https://github.com/BenMalaga/wastegate#readme",
+  "bugs": {
+    "url": "https://github.com/BenMalaga/wastegate/issues"
+  },
+  "author": "Ben Malaga",
+  "license": "MIT"
+}
