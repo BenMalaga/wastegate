@@ -39,16 +39,16 @@ wastegate · vitejs/vite · last 1 days · 128 completed runs
 Compute spend $9.34 (at hosted-runner rates) · identified waste $8.07 (86%)
 
 $7.45  Spend on failed runs (16)
-  16 failed runs × their billable minutes
-  ·    $0.73  CI on fix/deep-import-error-message — failed after 6 min
-  ·    $0.72  CI on renovate/pnpm-11.x — failed after 6 min
+  16 failed runs x their billable minutes
+  -    $0.73  CI on fix/deep-import-error-message - failed after 6 min
+  -    $0.72  CI on renovate/pnpm-11.x - failed after 6 min
   fix:
     Order jobs cheapest-first and fail fast: run lint/typecheck/unit before slow
     integration/e2e jobs, add `timeout-minutes:` to long jobs...
 
 $0.61  Spend on re-run (flaky) attempts (2)
-  2 runs with >1 attempt, charging (attempt−1)/attempt of cost as waste
-  ·    $0.33  CI on feat/hmr-add-runtimeErrors-option — re-run 2× before passing
+  2 runs with >1 attempt, charging (attempt-1)/attempt of cost as waste
+  -    $0.33  CI on feat/hmr-add-runtimeErrors-option - re-run 2x before passing
   fix:
     Re-runs are flaky tests with a dollar sign. Quarantine the flakers...
 
@@ -110,10 +110,10 @@ and nothing else).
 
 ## Why not ___?
 
-- **Hosted CI-cost dashboards** (Kleore, CostOps, Mergify…): require sending your
+- **Hosted CI-cost dashboards** (Kleore, CostOps, Mergify, etc.): require sending your
   data to a third party, and stop at *where* the money goes. wastegate is local
   and answers *why*, with the fix.
-- **Local usage CLIs** (`actions-usage`, `gh-workflow-stats`…): minutes and
+- **Local usage CLIs** (`actions-usage`, `gh-workflow-stats`, etc.): minutes and
   durations, no dollars, no causes, no counterfactuals.
 - **Static workflow linters** (`ci-doctor`-style): they predict ("you're missing
   a concurrency block"); wastegate **measures** ("its absence cost $412 in the
